@@ -165,6 +165,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserBooksController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,9 +175,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Dtos\Books.cs" />
+    <Compile Include="Models\Dtos\UserBooks.cs" />
     <Compile Include="Models\Dtos\Users.cs" />
     <Compile Include="Models\Dtos\UsersDtoExtensionMethod.cs" />
-    <Compile Include="Models\IProductRepository.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,8 +193,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductRepository.cs" />
     <Compile Include="Models\UserBooks.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -289,6 +288,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Books\" />
     <Folder Include="Views\Products\" />
+    <Folder Include="Views\UserBooks\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
