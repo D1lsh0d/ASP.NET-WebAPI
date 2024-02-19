@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="UserBooks" Relationship="Self.FK__UserBooks__BookI__403A8C7D" FromRole="Books" ToRole="UserBooks" />
+  </EntityType>
+  <EntityType Name="UserBooks">
+    <Key>
+      <PropertyRef Name="UserBookID" />
+    </Key>
+    <Property Name="UserBookID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="BookID" Type="Int32" Nullable="false" />
+    <Property Name="CheckoutDate" Type="DateTime" Precision="0" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__UserBooks__BookI__403A8C7D" FromRole="UserBooks" ToRole="Books" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__UserBooks__UserI__3F466844" FromRole="UserBooks" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserBooks" Relationship="Self.FK__UserBooks__UserI__3F466844" FromRole="Users" ToRole="UserBooks" />
+  </EntityType>
+  <Association Name="FK__UserBooks__BookI__403A8C7D">
+    <End Role="Books" Type="Self.Books" Multiplicity="1" />
+    <End Role="UserBooks" Type="Self.UserBooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserBooks">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserBooks__UserI__3F466844">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserBooks" Type="Self.UserBooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserBooks">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Books" EntityType="Self.Books" />
+    <EntitySet Name="UserBooks" EntityType="Self.UserBooks" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__UserBooks__BookI__403A8C7D" Association="Self.FK__UserBooks__BookI__403A8C7D">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="UserBooks" EntitySet="UserBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserBooks__UserI__3F466844" Association="Self.FK__UserBooks__UserI__3F466844">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserBooks" EntitySet="UserBooks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
