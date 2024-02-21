@@ -73,5 +73,38 @@ namespace Library_WebAPI.Controllers
             await entities.SaveChangesAsync();
             return Ok($"\"{book.Name}\" was succesfully deleted");
         }
+        [HttpPut]
+        public async Task<IHttpActionResult> UpdateBook(Books book) {
+            if (book == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var foundBook = entities.Books.FirstOrDefault(b => b.Id == book.Id);
+
+                if (foundBook == null)
+                {
+                    return NotFound();
+                }
+
+                // Обновление свойств существующей записи с использованием значений из переданного объекта book
+                foundBook.Name = book.Name;
+                foundBook.Author = book.Author;
+                foundBook.PrintDate = book.PrintDate;
+                foundBook.Description = book.Description;
+
+                await entities.SaveChangesAsync();
+
+                return Ok(foundBook);
+            }
+            catch (Exception ex)
+            {
+
+                // Обработка ошибок при обновлении записи
+                return InternalServerError(ex);
+            }
+        }
     }
 }
