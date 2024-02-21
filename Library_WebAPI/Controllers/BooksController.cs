@@ -10,7 +10,7 @@ using Library_WebAPI.Models;
 
 namespace Library_WebAPI.Controllers
 {
-    
+
     public class BooksController : ApiController
     {
         LibraryEntities entities = new LibraryEntities();
@@ -42,7 +42,7 @@ namespace Library_WebAPI.Controllers
             {
                 return NotFound();
             }
-            
+
             Models.Dtos.Books bookDto = book.GetBookDto();
 
             return Ok(bookDto);
@@ -53,10 +53,25 @@ namespace Library_WebAPI.Controllers
         public async Task<IHttpActionResult> AddBook(Books book)
         {
             if (book == null) { return BadRequest(); }
-             
+
             entities.Books.Add(book);
             await entities.SaveChangesAsync();
-            return Ok("Book was succesfully added");
+            return Ok($"\"{book.Name}\" was succesfully added");
+        }
+
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteBook(int id)
+        {
+            Books book = await entities.Books.FindAsync(id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            entities.Books.Remove(book);
+            await entities.SaveChangesAsync();
+            return Ok($"\"{book.Name}\" was succesfully deleted");
         }
     }
 }
