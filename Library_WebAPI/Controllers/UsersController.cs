@@ -58,7 +58,7 @@ namespace Library_WebAPI.Controllers
             return Ok("User was succesfully added");
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IHttpActionResult> UpdateUser(Models.Dtos.Users user)
         {
             if (user == null) { return BadRequest(); };

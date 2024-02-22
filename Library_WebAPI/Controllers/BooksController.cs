@@ -70,7 +70,7 @@ namespace Library_WebAPI.Controllers
             }
 
             entities.Books.Remove(book);
-            await entities.SaveChangesAsync();
+            await entities.SaveChangesAsync();  
             return Ok($"\"{book.Name}\" was succesfully deleted");
         }
         [HttpPut]
@@ -97,7 +97,7 @@ namespace Library_WebAPI.Controllers
 
                 await entities.SaveChangesAsync();
 
-                return Ok(foundBook);
+                return Ok("Book was succesfully updated");
             }
             catch (Exception ex)
             {
