@@ -71,7 +71,7 @@ namespace Library_WebAPI.Controllers
 
             entities.Books.Remove(book);
             await entities.SaveChangesAsync();  
-            return Ok($"\"{book.Name}\" was succesfully deleted");
+            return Ok($"Book: \"{book.Name}\" was succesfully deleted");
         }
         [HttpPut]
         public async Task<IHttpActionResult> UpdateBook(Books book) {
@@ -101,7 +101,6 @@ namespace Library_WebAPI.Controllers
             }
             catch (Exception ex)
             {
-
                 // Обработка ошибок при обновлении записи
                 return InternalServerError(ex);
             }

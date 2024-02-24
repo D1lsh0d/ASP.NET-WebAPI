@@ -58,18 +58,51 @@ namespace Library_WebAPI.Controllers
             return Ok("User was succesfully added");
         }
 
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteUser(int id)
+        {
+            Models.Users user = await entities.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            entities.Users.Remove(user);
+            await entities.SaveChangesAsync();
+            return Ok($"User: \"{user.FullName}\" was succesfully deleted");
+        }
+
         [HttpPut]
-        public async Task<IHttpActionResult> UpdateUser(Models.Dtos.Users user)
+        public async Task<IHttpActionResult> UpdateUser(Models.Users user)
         {
             if (user == null) { return BadRequest(); };
 
-            Models.Users foundUser = await entities.Users.FindAsync(user.Id);
-            foundUser = user.GetUserFromDto();
-            
-            if (foundUser == null) { throw new Exception($"User with id = {user.Id} not found"); }; 
-            
-            await entities.SaveChangesAsync();
-            return Ok(foundUser);
+            try
+            {
+                var foundUser = entities.Users.FirstOrDefault(b => b.Id == user.Id);
+
+                if (foundUser == null)
+                {
+                    return NotFound();
+                }
+
+                // Обновление свойств существующей записи с использованием значений из переданного объекта user
+                foundUser.FullName = user.FullName;
+                foundUser.DateOfBirth = user.DateOfBirth;
+                foundUser.Address = user.Address;
+                foundUser.Email = user.Email;
+                foundUser.Phone = user.Phone;
+
+                await entities.SaveChangesAsync();
+
+                return Ok("User was succesfully updated");
+            }
+            catch (Exception ex)
+            {
+                // Обработка ошибок при обновлении записи
+                return InternalServerError(ex);
+            }
         }
     }
 }
