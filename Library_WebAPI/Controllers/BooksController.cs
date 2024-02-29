@@ -27,6 +27,7 @@ namespace Library_WebAPI.Controllers
                             Author = b.Author,
                             Description = b.Description,
                             PrintDate = b.PrintDate,
+                            Quantity = b.Quantity
                         };
 
             return books;
@@ -94,6 +95,7 @@ namespace Library_WebAPI.Controllers
                 foundBook.Author = book.Author;
                 foundBook.PrintDate = book.PrintDate;
                 foundBook.Description = book.Description;
+                foundBook.Quantity = book.Quantity;
 
                 await entities.SaveChangesAsync();
 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище LibraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище LibraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Books">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,6 +14,7 @@
           <Property Name="Author" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="PrintDate" Type="date" />
+          <Property Name="Quantity" Type="int" />
         </EntityType>
         <EntityType Name="UserBooks">
           <Key>
@@ -73,8 +74,7 @@
             <End Role="UserBooks" EntitySet="UserBooks" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -88,6 +88,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PrintDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="UserBooks" Relationship="Self.FK__UserBooks__BookI__403A8C7D" FromRole="Books" ToRole="UserBooks" />
+          <Property Name="Quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="UserBooks">
           <Key>
@@ -159,6 +160,7 @@
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="LibraryModel.Books">
               <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Author" ColumnName="Author" />

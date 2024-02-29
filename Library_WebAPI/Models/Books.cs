@@ -25,6 +25,7 @@ namespace Library_WebAPI.Models
         public string Author { get; set; }
         public string Description { get; set; }
         public Nullable<System.DateTime> PrintDate { get; set; }
+        public Nullable<int> Quantity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserBooks> UserBooks { get; set; }

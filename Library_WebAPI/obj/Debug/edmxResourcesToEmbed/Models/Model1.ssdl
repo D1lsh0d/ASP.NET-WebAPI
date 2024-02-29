@@ -9,6 +9,7 @@
     <Property Name="Author" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="PrintDate" Type="date" />
+    <Property Name="Quantity" Type="int" />
   </EntityType>
   <EntityType Name="UserBooks">
     <Key>

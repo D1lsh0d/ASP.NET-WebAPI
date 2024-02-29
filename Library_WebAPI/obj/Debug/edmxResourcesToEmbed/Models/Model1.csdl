@@ -10,6 +10,7 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PrintDate" Type="DateTime" Precision="0" />
     <NavigationProperty Name="UserBooks" Relationship="Self.FK__UserBooks__BookI__403A8C7D" FromRole="Books" ToRole="UserBooks" />
+    <Property Name="Quantity" Type="Int32" />
   </EntityType>
   <EntityType Name="UserBooks">
     <Key>
