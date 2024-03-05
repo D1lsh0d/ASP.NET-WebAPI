@@ -1,5 +1,5 @@
 # ASP.NET-WebAPI
-WebAPI for [library client app](https://github.com/D1lsh0d/WPF-Client-App) built with C# ASP.NET (.NET Framework 4.8).
+WebAPI for CRUD operations of [library client app](https://github.com/D1lsh0d/WPF-Client-App) built with C# ASP.NET (.NET Framework 4.8).
 This API interacts with library's database via Entity Framework.
 
 ## Database
