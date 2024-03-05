@@ -1,2 +1,4 @@
 # ASP.NET-WebAPI
-WebAPI built with ASP.NET and Entity Framework for Library client app
+WebAPI for example library client app built with C# ASP.NET (.NET Framework 4.8) and Entity Framework
+
+Database file is in [Database/](Database) folder
