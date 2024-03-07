@@ -97,3 +97,4 @@ D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\ru\System.We
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_WebAPI.csproj.CopyComplete
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_WebAPI.dll
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_WebAPI.pdb
+D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\Library_WebAPI.xml

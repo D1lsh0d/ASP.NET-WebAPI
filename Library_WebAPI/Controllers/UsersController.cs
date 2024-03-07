@@ -16,6 +16,10 @@ namespace Library_WebAPI.Controllers
     {
         LibraryEntities entities = new LibraryEntities();
         // GET: Users
+        /// <summary>
+        /// Gets list of users from the server
+        /// </summary>
+        /// <returns>List of Users DTO</returns>
         [HttpGet]
         public IQueryable<Models.Dtos.Users> GetUsers()
         {
@@ -31,7 +35,11 @@ namespace Library_WebAPI.Controllers
 
             return users;
         }
-
+        /// <summary>
+        /// Gets the user by Id
+        /// </summary>
+        /// <param name="id">User Id</param>
+        /// <returns>User DTO</returns>
         [ResponseType(typeof(Models.Dtos.Users))]
         public async Task<IHttpActionResult> GetUser(int id)
         {
@@ -48,6 +56,11 @@ namespace Library_WebAPI.Controllers
         }
 
         // POST:
+        /// <summary>
+        /// Adds user to the server 
+        /// </summary>
+        /// <param name="user">User model</param>
+        /// <returns>Action result</returns>
         [HttpPost]
         public async Task<IHttpActionResult> AddUser(Models.Users user)
         {
@@ -57,7 +70,11 @@ namespace Library_WebAPI.Controllers
             await entities.SaveChangesAsync();
             return Ok("User was succesfully added");
         }
-
+        /// <summary>
+        /// Deletes user by Id
+        /// </summary>
+        /// <param name="id">User Id</param>
+        /// <returns>Action result</returns>
         [HttpDelete]
         public async Task<IHttpActionResult> DeleteUser(int id)
         {
@@ -72,7 +89,11 @@ namespace Library_WebAPI.Controllers
             await entities.SaveChangesAsync();
             return Ok($"User: \"{user.FullName}\" was succesfully deleted");
         }
-
+        /// <summary>
+        /// Updates user's data
+        /// </summary>
+        /// <param name="user">User model</param>
+        /// <returns>Action result</returns>
         [HttpPut]
         public async Task<IHttpActionResult> UpdateUser(Models.Users user)
         {

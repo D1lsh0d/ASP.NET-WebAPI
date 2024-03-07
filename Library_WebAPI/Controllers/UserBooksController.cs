@@ -13,8 +13,10 @@ namespace Library_WebAPI.Controllers
     public class UserBooksController : ApiController
     {
         LibraryEntities entities = new LibraryEntities();
-
-        // GET: UserBooks
+        /// <summary>
+        /// Gets list of records (books that were taken by users) from the server
+        /// </summary>
+        /// <returns>List of records</returns>
         [HttpGet]
         public IQueryable<Models.Dtos.UserBooks> GetUserBooks()
         {
@@ -29,7 +31,11 @@ namespace Library_WebAPI.Controllers
                             };
             return userBooks;
         }
-        // POST:
+        /// <summary>
+        /// Adds user-book record to the server
+        /// </summary>
+        /// <param name="userBook">UserBook Model</param>
+        /// <returns>Action result</returns>
         [HttpPost]
         public async Task<IHttpActionResult> AddUserBooks(UserBooks userBook)
         {
@@ -39,7 +45,11 @@ namespace Library_WebAPI.Controllers
             await entities.SaveChangesAsync();
             return Ok("Record was succesfully added");
         }
-
+        /// <summary>
+        /// Updates user-book record
+        /// </summary>
+        /// <param name="record">UserBook Model</param>
+        /// <returns>Action result</returns>
         [HttpPut]
         public async Task<IHttpActionResult> UpdateRecord(UserBooks record)
         {
@@ -73,7 +83,11 @@ namespace Library_WebAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-
+        /// <summary>
+        /// Deletes user-book record by id
+        /// </summary>
+        /// <param name="id">record id</param>
+        /// <returns>Action result</returns>
         [HttpDelete]
         public async Task<IHttpActionResult> DeleteRecord(int id)
         {

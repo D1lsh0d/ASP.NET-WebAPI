@@ -15,7 +15,10 @@ namespace Library_WebAPI.Controllers
     {
         LibraryEntities entities = new LibraryEntities();
 
-        // GET: api/Books
+        /// <summary>
+        /// Gets list of Books from the server
+        /// </summary>
+        /// <returns>list of Books DTO</returns>
         [HttpGet]
         public IQueryable<Models.Dtos.Books> GetBooks()
         {
@@ -34,6 +37,11 @@ namespace Library_WebAPI.Controllers
         }
 
         // GET: api/Books/id
+        /// <summary>
+        /// Gets the book by Id from the server
+        /// </summary>
+        /// <param name="id">Book Id</param>
+        /// <returns>Book DTO</returns>
         [ResponseType(typeof(Models.Dtos.Books))]
         public async Task<IHttpActionResult> GetBook(int id)
         {
@@ -49,7 +57,11 @@ namespace Library_WebAPI.Controllers
             return Ok(bookDto);
         }
 
-        // POST:
+        /// <summary>
+        /// Adds the book to the server
+        /// </summary>
+        /// <param name="book">Book model</param>
+        /// <returns>Action result</returns>
         [HttpPost]
         public async Task<IHttpActionResult> AddBook(Books book)
         {
@@ -59,7 +71,11 @@ namespace Library_WebAPI.Controllers
             await entities.SaveChangesAsync();
             return Ok($"\"{book.Name}\" was succesfully added");
         }
-
+        /// <summary>
+        /// Deletes the book by Id
+        /// </summary>
+        /// <param name="id">Book Id</param>
+        /// <returns>Action result</returns>
         [HttpDelete]
         public async Task<IHttpActionResult> DeleteBook(int id)
         {
@@ -74,6 +90,11 @@ namespace Library_WebAPI.Controllers
             await entities.SaveChangesAsync();  
             return Ok($"Book: \"{book.Name}\" was succesfully deleted");
         }
+        /// <summary>
+        /// Updates the book data on the server
+        /// </summary>
+        /// <param name="book">Book model</param>
+        /// <returns>Action result</returns>
         [HttpPut]
         public async Task<IHttpActionResult> UpdateBook(Books book) {
             if (book == null)
