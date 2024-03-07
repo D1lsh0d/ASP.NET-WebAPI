@@ -7,30 +7,30 @@ This API interacts with library's database via Entity Framework.
 
 | API                             | Description                              |
 | ------------------------------- | ---------------------------------------- |
-| [GET api/Books](/Help/Api/GET-api-Books)              | Gets list of Books from the server       |
-| [GET api/Books/{id}](/Help/Api/GET-api-Books-id)      | Gets the book by Id from the server      |
-| [POST api/Books](/Help/Api/POST-api-Books)            | Adds the book to the server               |
-| [DELETE api/Books/{id}](/Help/Api/DELETE-api-Books-id) | Deletes the book by Id                  |
-| [PUT api/Books](/Help/Api/PUT-api-Books)              | Updates the book data on the server      |
+| [GET api/Books](Library_WebAPI/Controllers/BooksController.cs)              | Gets list of Books from the server       |
+| [GET api/Books/{id}](Library_WebAPI/Controllers/BooksController.cs)      | Gets the book by Id from the server      |
+| [POST api/Books](Library_WebAPI/Controllers/BooksController.cs)            | Adds the book to the server               |
+| [DELETE api/Books/{id}](Library_WebAPI/Controllers/BooksController.cs) | Deletes the book by Id                  |
+| [PUT api/Books](Library_WebAPI/Controllers/BooksController.cs)              | Updates the book data on the server      |
 
 # Users controller
 
 | API                             | Description                              |
 | ------------------------------- | ---------------------------------------- |
-| [GET api/Users](/Help/Api/GET-api-Users)              | Gets list of users from the server       |
-| [GET api/Users/{id}](/Help/Api/GET-api-Users-id)      | Gets the user by Id                      |
-| [POST api/Users](/Help/Api/POST-api-Users)            | Adds user to the server                  |
-| [DELETE api/Users/{id}](/Help/Api/DELETE-api-Users-id) | Deletes user by Id                      |
-| [PUT api/Users](/Help/Api/PUT-api-Users)              | Updates user's data                      |
+| [GET api/Users](Library_WebAPI/Controllers/UsersController.cs)              | Gets list of users from the server       |
+| [GET api/Users/{id}](Library_WebAPI/Controllers/UsersController.cs)      | Gets the user by Id                      |
+| [POST api/Users](Library_WebAPI/Controllers/UsersController.cs)            | Adds user to the server                  |
+| [DELETE api/Users/{id}](Library_WebAPI/Controllers/UsersController.cs) | Deletes user by Id                      |
+| [PUT api/Users](Library_WebAPI/Controllers/UsersController.cs)              | Updates user's data                      |
 
 # UserBooks controller
 
 | API                               | Description                              |
 | --------------------------------- | ---------------------------------------- |
-| [GET api/UserBooks](/Help/Api/GET-api-UserBooks)    | Gets list of records (books that were taken by users) from the server |
-| [POST api/UserBooks](/Help/Api/POST-api-UserBooks)  | Adds user-book record to the server      |
-| [PUT api/UserBooks](/Help/Api/PUT-api-UserBooks)    | Updates user-book record                |
-| [DELETE api/UserBooks/{id}](/Help/Api/DELETE-api-UserBooks-id) | Deletes user-book record by id       |
+| [GET api/UserBooks](Library_WebAPI/Controllers/UserBooksController.cs)    | Gets list of records (books that were taken by users) from the server |
+| [POST api/UserBooks](Library_WebAPI/Controllers/UserBooksController.cs)  | Adds user-book record to the server      |
+| [PUT api/UserBooks](Library_WebAPI/Controllers/UserBooksController.cs)    | Updates user-book record                |
+| [DELETE api/UserBooks/{id}](Library_WebAPI/Controllers/UserBooksController.cs) | Deletes user-book record by id       |
 
 ## Database
 Database file is in [Database/](Database) folder.  
