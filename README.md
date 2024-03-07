@@ -3,7 +3,7 @@ WebAPI for CRUD operations of [library client app](https://github.com/D1lsh0d/WP
 This API interacts with library's database via Entity Framework.
 
 ## API Methods
-# Books controller
+### Books controller
 
 | API                             | Description                              |
 | ------------------------------- | ---------------------------------------- |
@@ -13,7 +13,7 @@ This API interacts with library's database via Entity Framework.
 | [DELETE api/Books/{id}](Library_WebAPI/Controllers/BooksController.cs) | Deletes the book by Id                  |
 | [PUT api/Books](Library_WebAPI/Controllers/BooksController.cs)              | Updates the book data on the server      |
 
-# Users controller
+### Users controller
 
 | API                             | Description                              |
 | ------------------------------- | ---------------------------------------- |
@@ -23,7 +23,7 @@ This API interacts with library's database via Entity Framework.
 | [DELETE api/Users/{id}](Library_WebAPI/Controllers/UsersController.cs) | Deletes user by Id                      |
 | [PUT api/Users](Library_WebAPI/Controllers/UsersController.cs)              | Updates user's data                      |
 
-# UserBooks controller
+### UserBooks controller
 
 | API                               | Description                              |
 | --------------------------------- | ---------------------------------------- |
