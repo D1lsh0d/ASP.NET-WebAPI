@@ -94,7 +94,7 @@ D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\ru\System.We
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\ru\System.Web.WebPages.resources.dll
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\ru\System.Web.WebPages.Deployment.resources.dll
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\ru\System.Web.WebPages.Razor.resources.dll
+D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_WebAPI.csproj.CopyComplete
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_WebAPI.dll
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_WebAPI.pdb
 D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\bin\Library_WebAPI.xml
-D:\Учёба\ИСРПО\projects\Library_WebAPI\Library_WebAPI\obj\Debug\Library_.68CDDE32.Up2Date
